@@ -1,3 +1,3 @@
 ﻿using ascii_race;
 
-var cena = new Cena();
+var cena = new Game();
