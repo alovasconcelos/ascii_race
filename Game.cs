@@ -13,12 +13,14 @@ namespace ascii_race
         private bool continuar;
         private Car car;
         private Road road;
+        private Car opponent;
 
         public Game()
         {
             Start();
         }
 
+        
         private void Start()
         {
             Console.Clear();
@@ -29,6 +31,7 @@ namespace ascii_race
             car = new Car();
             road = new Road();
             road.Draw();
+            opponent = new Car(true);
             // Game loop
             do
             {
@@ -37,7 +40,12 @@ namespace ascii_race
                 Thread.Sleep(17);
                 updateCarPosition();
                 car.Draw();
+                opponent.Draw();
                 road.Forward();
+                if (road.CurrentPosition % 10 == 0)
+                {
+                    opponent.MoveDown();
+                }
                 UpdateScore();
             }while (continuar);
         }
@@ -45,7 +53,8 @@ namespace ascii_race
         private void UpdateScore()
         {
             Console.SetCursorPosition(0, 22);
-            Console.Write($"Km(s):{road.CurrentPosition.ToString("n3")}");
+            float currentPosition = road.CurrentPosition / 100;
+            Console.Write($"Km(s):{currentPosition.ToString("n3")}");
         }
 
         private void updateCarPosition()

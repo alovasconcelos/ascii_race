@@ -8,23 +8,25 @@ namespace ascii_race
 {
     internal class Road
     {
-        public float CurrentPosition { get; set; } = 0f;
+        public int CurrentPosition { get; set; } = 0;
 
         public Road() {
         }
 
         public void Draw()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             for (int i = 0; i < 22;  i++)
             {
                 Console.SetCursorPosition(0, i);
-                Console.Write("|                              |");
+                Console.Write("!                              !");
             }
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
         public void Forward()
         {
-            CurrentPosition += 0.005f;
+            CurrentPosition++;
         }
     }
 }
