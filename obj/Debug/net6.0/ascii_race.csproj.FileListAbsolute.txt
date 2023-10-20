@@ -12,3 +12,17 @@ C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\refint\ascii_race.dll
 C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.pdb
 C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.genruntimeconfig.cache
 C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ref\ascii_race.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\ascii_race.exe
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\ascii_race.deps.json
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\ascii_race.runtimeconfig.json
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\ascii_race.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\ascii_race.pdb
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.AssemblyInfoInputs.cache
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.AssemblyInfo.cs
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.CoreCompileInputs.cache
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.dll
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\refint\ascii_race.dll
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.pdb
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.genruntimeconfig.cache
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ref\ascii_race.dll

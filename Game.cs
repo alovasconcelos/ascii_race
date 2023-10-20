@@ -13,7 +13,8 @@ namespace ascii_race
         private bool continuar;
         private Car car;
         private Road road;
-        private Car opponent;
+        const int totalOpponents = 5;
+        private List<Car> opponents = new List<Car>();
 
         public Game()
         {
@@ -31,23 +32,41 @@ namespace ascii_race
             car = new Car();
             road = new Road();
             road.Draw();
-            opponent = new Car(true);
+
             // Game loop
             do
             {
                 // Equivale a dizer que o conteúdo será executado 
                 // 60 vezes por segundo (aproximadamente)
                 Thread.Sleep(17);
+                SpawnOpponent();
                 updateCarPosition();
                 car.Draw();
-                opponent.Draw();
+                DrawOpponents();
                 road.Forward();
+                UpdateScore();
+            }while (continuar);
+        }
+
+        private void SpawnOpponent()
+        {
+            if (road.CurrentPosition % 20 == 0 && opponents.Count < totalOpponents)
+            {
+                var opponent = new Car(true);
+                opponents.Add(opponent);
+            }
+        }
+
+        private void DrawOpponents()
+        {
+            foreach (var opponent in opponents)
+            {
+                opponent.Draw();
                 if (road.CurrentPosition % 10 == 0)
                 {
                     opponent.MoveDown();
                 }
-                UpdateScore();
-            }while (continuar);
+            }
         }
 
         private void UpdateScore()

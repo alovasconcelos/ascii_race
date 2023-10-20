@@ -8,32 +8,34 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\55759\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\alova\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\19.4.0.38\\ToolboxNuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\55759\\source\\repos\\ascii_race\\ascii_race.csproj",
+      "projectUniqueName": "C:\\Users\\alova\\source\\repos\\ascii_race\\ascii_race.csproj",
       "projectName": "ascii_race",
-      "projectPath": "C:\\Users\\55759\\source\\repos\\ascii_race\\ascii_race.csproj",
-      "packagesPath": "C:\\Users\\55759\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55759\\source\\repos\\ascii_race\\obj\\",
+      "projectPath": "C:\\Users\\alova\\source\\repos\\ascii_race\\ascii_race.csproj",
+      "packagesPath": "C:\\Users\\alova\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alova\\source\\repos\\ascii_race\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\19.4.0.38\\ToolboxNuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\55759\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alova\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Syncfusion Toolbox for WPF.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WinUI\\19.4.0.38\\NuGetPackages": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },

@@ -18,10 +18,16 @@ namespace ascii_race
             this.opponent = opponent;
             if (opponent)
             {
-                Random random = new Random();
-                carCol = random.Next(2, 29); // Gera um número entre 2 (incluído) e 29 (excluído)
-                carRow = 0;
+                OpponentInitialPosition();
             }
+        }
+
+        private void OpponentInitialPosition()
+        {
+            Random random = new Random();
+            carCol = random.Next(2, 29); // Gera um número entre 2 (incluído) e 29 (excluído)
+            carRow = 0;
+
         }
 
         public void Draw()
@@ -86,6 +92,11 @@ namespace ascii_race
                 }
                 Erase();
                 carRow++;
+            }
+            else
+            {
+                Erase();
+                OpponentInitialPosition();
             }
         }
        
