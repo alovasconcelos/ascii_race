@@ -54,11 +54,14 @@ namespace ascii_race
                 SpawnOpponent();
                 updateCarPosition();
                 car.Draw();
+                CheckCollision();
                 DrawOpponents();
                 road.Forward();
-                CheckCollision();
                 UpdateScore();
             }while (continuar);
+            Console.Clear();
+            Console.CursorVisible = true;
+            Console.WriteLine("Até mais...");
         }
         private void SpawnOpponent()
         {
@@ -103,6 +106,10 @@ namespace ascii_race
             if (Console.KeyAvailable)
             {
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
+                if (keyInfo.Key == ConsoleKey.Escape)
+                {
+                    continuar = false;
+                }
                 if (keyInfo.Key == ConsoleKey.LeftArrow)
                 {
                     car.MoveLeft();
@@ -153,9 +160,9 @@ namespace ascii_race
             foreach(var opponent in opponents)
             {
                 if (DetectCollision(opponent.CarMatrix(), car.CarMatrix())) {
+                    Crash();
                     collisions++;
                     opponent.Start();
-                    Crash();
                 }
             }
         }

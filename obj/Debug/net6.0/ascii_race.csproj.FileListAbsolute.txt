@@ -36,3 +36,13 @@ C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.Assemb
 C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.CopyComplete
 C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.Properties.Resources.resources
 C:\Users\55759\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.GenerateResource.cache
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\alova\source\repos\ascii_race\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.AssemblyReference.cache
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.Properties.Resources.resources
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.GenerateResource.cache
+C:\Users\alova\source\repos\ascii_race\obj\Debug\net6.0\ascii_race.csproj.CopyComplete
