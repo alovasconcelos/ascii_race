@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Media;
 
 namespace ascii_race
 {
@@ -13,8 +9,11 @@ namespace ascii_race
         private bool continuar;
         private Car car;
         private Road road;
-        const int totalOpponents = 5;
+        private int totalOpponents = 5;
+        private int speed = 5;
         private List<Car> opponents = new List<Car>();
+        private int collisions;
+        private int overtakedOpponents;
 
         public Game()
         {
@@ -32,25 +31,29 @@ namespace ascii_race
             car = new Car();
             road = new Road();
             road.Draw();
+            collisions = 0;
+            overtakedOpponents= 0;
+
+            PlayBackGroundSound();
 
             // Game loop
             do
             {
                 // Equivale a dizer que o conteúdo será executado 
                 // 60 vezes por segundo (aproximadamente)
-                Thread.Sleep(17);
+                Thread.Sleep(20 - speed);
                 SpawnOpponent();
                 updateCarPosition();
                 car.Draw();
                 DrawOpponents();
                 road.Forward();
+                CheckCollision();
                 UpdateScore();
             }while (continuar);
         }
-
         private void SpawnOpponent()
         {
-            if (road.CurrentPosition % 20 == 0 && opponents.Count < totalOpponents)
+            if (road.CurrentPosition % 100 == 0 && opponents.Count < totalOpponents)
             {
                 var opponent = new Car(true);
                 opponents.Add(opponent);
@@ -64,7 +67,10 @@ namespace ascii_race
                 opponent.Draw();
                 if (road.CurrentPosition % 10 == 0)
                 {
-                    opponent.MoveDown();
+                    if (!opponent.MoveDown())
+                    {
+                        overtakedOpponents++;
+                    }
                 }
             }
         }
@@ -72,8 +78,12 @@ namespace ascii_race
         private void UpdateScore()
         {
             Console.SetCursorPosition(0, 22);
-            float currentPosition = road.CurrentPosition / 100;
-            Console.Write($"Km(s):{currentPosition.ToString("n3")}");
+            float currentPosition = (float)road.CurrentPosition / 100;
+            Console.Write($"Km(s):{currentPosition.ToString("n3")}  Collisions: {collisions.ToString()}");
+            Console.SetCursorPosition(0, 23);
+            Console.Write($"Ultrapassagens:{overtakedOpponents.ToString()}");
+            Console.SetCursorPosition(0, 24);
+            Console.Write($"Speed:{(speed * 10).ToString("000")}");
         }
 
         private void updateCarPosition()
@@ -89,9 +99,72 @@ namespace ascii_race
                 {
                     car.MoveRight();
                 }
+                if (keyInfo.Key == ConsoleKey.UpArrow)
+                {
+                    SpeedUp();
+                }
+                if (keyInfo.Key == ConsoleKey.DownArrow)
+                {
+                    SpeedDown();
+                }
             }
         }
 
+        private void SpeedUp()
+        {
+            if (speed < 20)
+            {
+                speed++;
+            }
+        }
 
+        private void SpeedDown()
+        {
+            if (speed > 5)
+            {
+                speed--;
+            }
+        }
+        static bool DetectCollision(List<Tuple<int, int>> matrix1, List<Tuple<int, int>> matrix2)
+        {
+            foreach (var coordinate in matrix1)
+            {
+                if (matrix2.Contains(coordinate))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void CheckCollision()
+        {
+            foreach(var opponent in opponents)
+            {
+                if (DetectCollision(opponent.CarMatrix(), car.CarMatrix())) {
+                    collisions++;
+                    opponent.Start();
+                    Crash();
+                }
+            }
+        }
+
+        private void Crash()
+        {
+            PlayCrashSound();            
+        }
+
+        private void PlayBackGroundSound()
+        {
+            SoundPlayer sound = new SoundPlayer(Properties.Resources._8_bit_racing_car);
+            sound.PlayLooping();
+        }
+
+        private void PlayCrashSound()
+        {
+            SoundPlayer crash = new SoundPlayer(Properties.Resources.crash);
+            crash.Play();
+            Thread.Sleep(1000);
+            PlayBackGroundSound();
+        }
     }
 }

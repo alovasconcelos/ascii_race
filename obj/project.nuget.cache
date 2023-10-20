@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "D7K5X0/AWeUSOpu2tIA7y3MmmPSblgzg3CmS0CYbNi5hlYU+jJoj/axhdc/PhSHz+4u2M3prq/EjXOwVRTOZ6A==",
+  "dgSpecHash": "s1X/kjLs7/kkgSqrAvy5Rdw2fml/ElLJdT+K4nBirYMuXbQ8c98s3G/Qahe0m/oz/yh5dI7Yr4FBmq39Z08qzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alova\\source\\repos\\ascii_race\\ascii_race.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\55759\\source\\repos\\ascii_race\\ascii_race.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\55759\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\55759\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
+    "C:\\Users\\55759\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

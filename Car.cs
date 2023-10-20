@@ -18,16 +18,16 @@ namespace ascii_race
             this.opponent = opponent;
             if (opponent)
             {
-                OpponentInitialPosition();
+                Start();
             }
         }
 
-        private void OpponentInitialPosition()
+        public void Start()
         {
+            Erase();
             Random random = new Random();
             carCol = random.Next(2, 29); // Gera um número entre 2 (incluído) e 29 (excluído)
             carRow = 0;
-
         }
 
         public void Draw()
@@ -75,7 +75,7 @@ namespace ascii_race
             }
         }
 
-        public void MoveDown()
+        public bool MoveDown()
         {
             if (carRow < 20)
             {
@@ -95,10 +95,24 @@ namespace ascii_race
             }
             else
             {
-                Erase();
-                OpponentInitialPosition();
+                Start();
+                return false;
             }
+            return true;
         }
-       
+      
+        public List<Tuple<int, int>> CarMatrix()
+        {
+            List<Tuple<int, int>> matrix = new List<Tuple<int, int>>();
+            for (int x = carCol; x < carCol + 3; x++)
+            {
+                for (int y = carRow;  y < carRow + 2; y++)
+                {
+                    var tuple = Tuple.Create(x, y); 
+                    matrix.Add(tuple);
+                }
+            }
+            return matrix;
+        }
     }
 }
