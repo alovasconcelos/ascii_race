@@ -17,8 +17,7 @@ namespace ascii_race
         private int overtakedOpponents;
         private SoundPlayer backGroundSound = new SoundPlayer(Properties.Resources._8_bit_racing_car);
         private SoundPlayer crashSound = new SoundPlayer(Properties.Resources.crash);
-        private Stopwatch stopwatch = new Stopwatch();
-
+        private Fuel fuel = new Fuel();
 
         public Game()
         {
@@ -28,6 +27,8 @@ namespace ascii_race
         
         private void Start()
         {
+            var splash = new Splash();
+            splash.Show();
             Console.Clear();
             Console.CursorVisible = false;
             topoTela = Console.CursorTop;
@@ -38,18 +39,14 @@ namespace ascii_race
             road.Draw();
             collisions = 0;
             overtakedOpponents= 0;
-
+            
             PlayBackGroundSound();
 
-            stopwatch.Start();
+            
 
             // Game loop
             do
-            {
-                TimeSpan timeSpan = TimeSpan.FromSeconds(Convert.ToInt32(stopwatch.Elapsed.TotalSeconds));
-                
-                // Equivale a dizer que o conteúdo será executado 
-                // 60 vezes por segundo (aproximadamente)
+            {   
                 Thread.Sleep(20 - speed);
                 SpawnOpponent();
                 updateCarPosition();
@@ -58,10 +55,14 @@ namespace ascii_race
                 DrawOpponents();
                 road.Forward();
                 UpdateScore();
+                if (!fuel.CheckFuel())
+                {
+                    continuar = false;
+                }
             }while (continuar);
             Console.Clear();
             Console.CursorVisible = true;
-            Console.WriteLine("Até mais...");
+            Console.WriteLine("Bye...");
         }
         private void SpawnOpponent()
         {
@@ -89,9 +90,8 @@ namespace ascii_race
 
         private void UpdateScore()
         {
-            TimeSpan timeSpan = TimeSpan.FromSeconds(Convert.ToInt32(stopwatch.Elapsed.TotalSeconds));
             Console.SetCursorPosition(20, 0);
-            Console.Write(timeSpan.ToString("c"));
+            Console.Write(fuel.Bar());
             Console.SetCursorPosition(0, 22);
             float currentPosition = (float)road.CurrentPosition / 100;
             Console.Write($"Km(s):{currentPosition.ToString("n3")}  Collisions: {collisions.ToString()}");
