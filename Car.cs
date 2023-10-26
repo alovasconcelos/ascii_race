@@ -36,6 +36,7 @@ namespace ascii_race
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
             }
+
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
